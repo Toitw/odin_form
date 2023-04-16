@@ -62,5 +62,27 @@
       </form>
     </div>
   </div>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const passwordInput = document.querySelector('#password');
+			const confirmPasswordInput = document.querySelector('#confirm-password');
+			const alert = document.querySelector('#password ~ .alert');
+
+			function checkPasswordValidity() {
+				if (passwordInput.value !== confirmPasswordInput.value && passwordInput.value && confirmPasswordInput.value) {
+					confirmPasswordInput.setCustomValidity('Passwords do not match');
+					alert.classList.add('active');
+					alert.textContent = "*Passwords don't match";
+				} else {
+					confirmPasswordInput.setCustomValidity('');
+					alert.classList.remove('active');
+					alert.textContent = '';
+				}
+			}
+
+			passwordInput.addEventListener('input', checkPasswordValidity);
+			confirmPasswordInput.addEventListener('input', checkPasswordValidity);
+		});
+	</script>
 </body>
 
