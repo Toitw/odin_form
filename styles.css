@@ -1,14 +1,20 @@
 <style>
 		* {
 			box-sizing: border-box;
-			font-family: 'Open Sans', sans-serif;
 			margin: 0;
 			padding: 0;
 		}
 
+		@font-face {
+			font-family: 'Norse-Bold';
+			src: url('./fonts/Norse-Bold.otf') format('opentype');
+		}
+		  
+
 		body {
 			background-color: #f5f5f5;
 			margin: 0;
+			font-family: 'Roboto', sans-serif;
 		}
 
 		.container {
@@ -37,23 +43,24 @@
 			background-color: rgba(10, 10, 10, 0.5);
 			opacity: 0,7;
 			width: 100%;
-			height: 100px;
-			margin-top: 33%;
+			height: 120px;
+			margin-top: 28%;
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
-			padding-top: 10px;
 		}
 
 		.logo img {
-			height: 90px;
+			height: 100px;
 			display: block;
 			margin: 0;
+			padding-top: 10px;
 		}
 
 		.logo p {
 			color: #fff;
-			font-size: 60px;
+			font-size: 80px;
+			font-family: 'Norse-Bold', sans-serif;
 			font-weight: bold;
 			text-align: center;
 			margin: 0;
@@ -104,8 +111,9 @@
 			grid-template-columns: repeat(1, 1fr); /* Change to 1 column by default */
 			grid-template-rows: repeat(3, 1fr);
 			grid-gap: 20px;
-			padding: 0 240px 0 60px;
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			padding: 0 240px 30px 60px;
+			box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+			z-index: 999;
 		  }
 		  
 		  /* Add this media query to change to 2 columns for larger screens */
@@ -133,14 +141,15 @@
 			font-size: 16px;
 		  }
 
-		  .form-group-left input:invalid,
-		  .form-group-right input:invalid {
+		  .form-group-left input#password:invalid,
+			.form-group-right input#confirm-password:invalid {
 			border-color: red; /* Add red border for invalid inputs */
-		   }
+			}
 
 		   .form-group-left input:focus,
 			.form-group-right input:focus {
-			border-color: #4ab4fa; /* Change border color to darker blue */
+			outline: none;
+			border-color: #3668f1; /* Change border color to darker blue */
 			box-shadow: 0 0 4px rgba(100, 100, 100, 0.5); /* Change box-shadow color to greyish */
 		}
 
@@ -152,15 +161,17 @@
 
 		  button[type="submit"] {
 			display: block;
-			width: 150px;
-			margin: 20px auto 0 60px;
-			padding: 10px 20px;
+			width: 250px;
+			margin: 30px auto 0 60px;
+			padding: 20px 30px;
 			border: none;
 			border-radius: 5px;
 			font-size: 16px;
+			font-weight: bold;
 			background-color: #596D48;
 			color: #fff;
 			cursor: pointer;
+			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); 
 		  }
 
 		  .button-section {
